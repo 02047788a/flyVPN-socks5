@@ -2,8 +2,8 @@
 DANTE_INTERNAL_HOST="eno1" #對內網卡/IP
 DANTE_INTERNAL_PORT=1080   #對內port
 DANTE_EXTERNAL_HOST="eno1" #對外網卡/IP
-FLYVPN_USERNAME="jimmy.wu@daedalus.com.tw"
-FLYVPN_PASSWORD="Da6!2ag377nrtMb"
+FLYVPN_USERNAME = ""            #flyVPN 帳號
+FLYVPN_PASSWORD= ""            #flyVPN 密碼
 
 echo
 echo "1. install dante proxy"
