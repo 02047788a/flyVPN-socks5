@@ -34,7 +34,7 @@ systemctl disable danted
 sed -i /tmp/sockd.conf -e "s/{DANTE_INTERNAL_HOST}/$DANTE_INTERNAL_HOST/g" 
 sed -i /tmp/sockd.conf -e "s/{DANTE_INTERNAL_PORT}/$DANTE_INTERNAL_PORT/g" 
 sed -i /tmp/sockd.conf -e "s/{DANTE_EXTERNAL_HOST}/$DANTE_EXTERNAL_HOST/g" 
-mv /tmp/sockd.conf /etc/sockd.conf
+mv /tmp/sockd.conf /etc/danted.conf
 
 echo
 echo "3. start dante proxy"
