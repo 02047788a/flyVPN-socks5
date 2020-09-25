@@ -1,5 +1,5 @@
 #!/bin/bash
-DANTE_INTERNAL_HOST="127.0.0.1" #對內網卡/IP
+DANTE_INTERNAL_HOST="eno1" #對內網卡/IP (must be use network name, will flyvpn can't mapping port)
 DANTE_INTERNAL_PORT=1080        #對內port
 DANTE_EXTERNAL_HOST="eno1"      #對外網卡/IP
 FLYVPN_USERNAME=""              #flyVPN 帳號
@@ -45,7 +45,7 @@ echo "checking dante proxy status...$DANTE_STATUS"
 echo
 echo "4. downlaod & uncompress flyVPN"
 FLYVPN_DOWN_PATH="/tmp/flyvpn.tar.gz"
-wget https://www.flyvpn.com/files/downloads/linux/flyvpn-x86_64-4.0.6.0.tar.gz -O $FLYVPN_DOWN_PATH -q --show-progress 
+wget https://www.flyvpn.com/files/downloads/linux/flyvpn-x86_64-4.0.7.0.tar.gz -O $FLYVPN_DOWN_PATH -q --show-progress 
 tar zxvf $FLYVPN_DOWN_PATH -C /usr/bin/ #解壓縮
 chmod -R 777 /usr/bin/flyvpn #變更執行權限
 rm $FLYVPN_DOWN_PATH
