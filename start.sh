@@ -10,16 +10,16 @@ danted_status=$(systemctl status danted.service | grep "Active:" | awk '{print $
 #echo "current_ip=$current_ip"
 
 
-if [ "$danted_status" == "active" ];then
-        echo "current_ip=$current_ip"
-        if [ -z "$current_ip" ] ||  ["$current_ip" == "$company_ip" ]; then
-                killall flyvpn
-                echo "not use flyVPN. (current_ip=$current_ip)"
-                flyvpn login
-                echo "socks5" | flyvpn connect "$VPN_NAME"
-        else
-                echo "useing flyVPN connect to $VPN_NAME. (current_ip=$current_ip)"
-        fi
-else
+if [ "$danted_status" != "active" ];then
         systemctl start danted.service
+fi
+
+echo "current_ip=$current_ip"
+if [ -z "$current_ip" ] ||  ["$current_ip" == "$company_ip" ]; then
+        killall flyvpn
+        echo "not use flyVPN. (current_ip=$current_ip)"
+        flyvpn login
+        echo "socks5" | flyvpn connect "$VPN_NAME"
+else
+        echo "useing flyVPN connect to $VPN_NAME. (current_ip=$current_ip)"
 fi
