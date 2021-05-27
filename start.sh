@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VPN_NAME="Taipei #71"
+VPN_NAME="Taichung #2"
 ddd=$(ps aux | grep "[f]lyvpn connect")
 myip=$(curl -x http://127.0.0.1:1080 -L ifconfig.me/ip)
 comip="114.34.170.104"
